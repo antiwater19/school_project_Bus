@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Bus Searching</title>
+    </head>
+    <body>
+        <h1>오늘 버스 노선</h1>
+        <script>
+            let a = 12;
+            console.log('안녕하세요');
+            console.log(a);
+        </script>
+        <input a>
+        <button onclick="good()"> a에 1씩 더하기 </button>
+        <script> 
+        //<!--이것은 XML데이터 값 가져오는거-->
+            //import cors from('cors');
+            //app.use(cors());  //이건 cors오류때문에 잠깐 적어둔거
+            function good(){
+                a = a+1;
+                console.log(`1증가됨 a = `+ a);
+            }
+            var xhr = new XMLHttpRequest();
+            var url = 'http://ws.bus.go.kr/api/rest/buspos/getBusPosByVehId'; 
+            /*URL*/
+            var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'9mTk0/xkXqrLmNNHjWBa/1miAzFFB9rxSS7KKuTq3FtOvlxeXCNHt6ix0GJvj/oEUnQdzxqBr0fuGEHQ1uARSQ=='; 
+            /*Service Key*/
+            queryParams += '&' + encodeURIComponent('vehId') + '=' + encodeURIComponent('111033115'); /**/
+            xhr.open('GET', url + queryParams);
+             // open은 새창을 여는 함수  xhr.close(); 로 창을 닫을 수도 있음
+            xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+            }
+            };
+            xhr.send('');
+            /*const xmlDocument = new DOMParser().parseFromString(xmlString, "text/xml");
+            console.log(xmlDocument);
+            const itemList = xmlDocument.querySelectorAll("plainNo");
+
+            for(const plainNo of itemList){
+            const id = plainNo.querySelector("id").textContent;
+            const title = plainNo.querySelector("title").textContent;
+              
+             console.log(id, title);
+            }*/
+        </script>  
+    </body>
+</html>

@@ -1,0 +1,73 @@
+
+getBusPosByRouteStList
+
+var xhr = new XMLHttpRequest();
+var url = 'http://ws.bus.go.kr/api/rest/buspos/getBusPosByRouteSt'; /*URL*/
+var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'서비스키'; /*Service Key*/
+queryParams += '&' + encodeURIComponent('busRouteId') + '=' + encodeURIComponent(''); /**/
+queryParams += '&' + encodeURIComponent('startOrd') + '=' + encodeURIComponent('1'); /**/
+queryParams += '&' + encodeURIComponent('endOrd') + '=' + encodeURIComponent('10'); /**/
+xhr.open('GET', url + queryParams);
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+        alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+    }
+};
+
+xhr.send('');
+
+getBusPosByRtidList
+
+/* Javascript 샘플 코드 */
+
+
+var xhr = new XMLHttpRequest();
+var url = 'http://ws.bus.go.kr/api/rest/buspos/getBusPosByRtid'; /*URL*/
+var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'서비스키'; /*Service Key*/
+queryParams += '&' + encodeURIComponent('busRouteId') + '=' + encodeURIComponent(''); /**/
+xhr.open('GET', url + queryParams);
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+        alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+    }
+};
+
+xhr.send('');
+
+getBusPosByVehIdItem
+
+/* Javascript 샘플 코드 */
+
+
+var xhr = new XMLHttpRequest();
+var url = 'http://ws.bus.go.kr/api/rest/buspos/getBusPosByVehId'; /*URL*/
+var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'서비스키'; /*Service Key*/
+queryParams += '&' + encodeURIComponent('vehId') + '=' + encodeURIComponent(''); /**/
+xhr.open('GET', url + queryParams);
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+        alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+    }
+};
+
+xhr.send('');
+
+getLowBusPosByRouteStList
+
+/* Javascript 샘플 코드 */
+
+
+var xhr = new XMLHttpRequest();
+var url = 'http://ws.bus.go.kr/api/rest/buspos/getLowBusPosByRouteSt'; /*URL*/
+var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'서비스키'; /*Service Key*/
+queryParams += '&' + encodeURIComponent('busRouteId') + '=' + encodeURIComponent(''); /**/
+queryParams += '&' + encodeURIComponent('startOrd') + '=' + encodeURIComponent(''); /**/
+queryParams += '&' + encodeURIComponent('endOrd') + '=' + encodeURIComponent(''); /**/
+xhr.open('GET', url + queryParams);
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+        alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+    }
+};
+
+xhr.send('');

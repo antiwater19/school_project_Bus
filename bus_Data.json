@@ -1,0 +1,37 @@
+
+{
+    "serviceresult": {
+        "commsgheader": {},
+        "msgheader": {
+            "headercd": 0,
+            "headermsg": "정상적으로 처리되었습니다.",
+            "itemcount": 0
+        },
+        "msgbody": {
+            "itemlist": [
+                {
+                    "bustype": 0,
+                    "datatm": 20170810132951,
+                    "laststnid": 111001109,
+                    "plainno": "서울75사2644",
+                    "posx": 192917.86479917663,
+                    "posy": 458196.80905869836,
+                    "routeid": 100100118,
+                    "sectdist": 186,
+                    "sectord": 3,
+                    "sectionid": 111700442,
+                    "stopflag": 0,
+                    "tmx": 126.919766,
+                    "tmy": 37.623303,
+                    "vehid": 111033352
+                },
+                {
+                    "bustype": 1,
+                    "datatm": 20170810132954,
+                    "laststnid": 111000119,
+                    "plainno": "서울74사3033"
+                }
+            ]
+        }
+    }
+}
