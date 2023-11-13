@@ -6,11 +6,10 @@
                     document.getElementById("headerMsg").innerHTML = data['headerMsg'];
                 });*/
 
-var XMLHttpRequest = require("xhr2").XMLHttpRequest;
 
 var xhr = new XMLHttpRequest();
 var url = 'http://ws.bus.go.kr/api/rest/buspos/getBusPosByVehId'; /*URL*/
-var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'9mTk0/xkXqrLmNNHjWBa/1miAzFFB9rxSS7KKuTq3FtOvlxeXCNHt6ix0GJvj/oEUnQdzxqBr0fuGEHQ1uARSQ=='; /*Service Key*/
+var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'서비스키'; /*Service Key*/
 queryParams += '&' + encodeURIComponent('vehId') + '=108045325' + encodeURIComponent('111033115'); /**/
 xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
