@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bus Searching</title>
+    </head>
+    <body>
+        <h1>오늘 버스 노선</h1>
+        <p id ="headerMsg"></p>
+        <script>
+            var xhr = new XMLHttpRequest();
+            var url = 'http://ws.bus.go.kr/api/rest/buspos/getBusPosByVehId'; /*URL*/
+            var queryParams = '?' + encodeURIComponent('serviceKey') + '9mTk0/xkXqrLmNNHjWBa/1miAzFFB9rxSS7KKuTq3FtOvlxeXCNHt6ix0GJvj/oEUnQdzxqBr0fuGEHQ1uARSQ=='+''; /*Service Key*/
+            queryParams += '&' + encodeURIComponent('vehId') + '=' + encodeURIComponent('108045036'); /**/
+            xhr.open('GET', url + queryParams);
+            xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+                }
+            };
+
+            xhr.send('');
+        </script>
+    </body>
+</html>

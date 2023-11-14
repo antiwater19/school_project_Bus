@@ -9,35 +9,28 @@
     <body>
         <h1>오늘 버스 노선</h1>
         <p id ="headerMsg"></p>
-        <button onclick=getBus()> 실행 </button>
-        <!--script>
-            import cors from('cors');
-            app.use(cors()); 
-            void function getBus(){
+        <button onclick="getBus()"> HeaderMsg가져오기 </button>
+        <script src="CORSsolve.js">
+            //import cors from('cors');
+            //app.use(cors()); 
+            
+            res.setHeader('Access-Control-Allow-origin', '*');
+            res.setHeader('Access-Control-Allow-Credentials', 'true'); // 쿠키 주고받기 허용
+            res.end();
+
+            function getBus(){
                 //let BusId = document.getElementById("BusId").value;
                 fetch('http://ws.bus.go.kr/api/rest/buspos/getBusPosByRtid?ServiceKey=9mTk0/xkXqrLmNNHjWBa/1miAzFFB9rxSS7KKuTq3FtOvlxeXCNHt6ix0GJvj/oEUnQdzxqBr0fuGEHQ1uARSQ==&busRouteId=100100014') 
                 .then((response) => response.json())
                 .then((data) => {
-                    document.getElementById("headerMsg").innerHTML = data['headerMsg'];
+                    document.getElementById("headerMsg").innerHTML = data['headerMsg']
                 });
             }
-        </script-->
-        <script>
-            function getBus(){
-                let BusId = document.getElementById("BusId").value;
-                fetch('http://ws.bus.go.kr/api/rest/buspos/getBusPosByRtid?ServiceKey=서비스키&busRouteId='+'100100014') 
-                .then((response) => response.json())
-                .then((data) => {
-                    document.getElementById("headerMsg").innerHTML = data['headerMsg'];
-                });
-            }
-            //cors문제 해결안됨
-            //xml파일로 만자꾸 나옴
         </script>
-        <!--script>
+        <script>
             var xhr = new XMLHttpRequest();
             var url = 'http://ws.bus.go.kr/api/rest/buspos/getBusPosByVehId'; /*URL*/
-            var queryParams = '?' + encodeURIComponent('serviceKey') + '서비스키'+''; /*Service Key*/
+            var queryParams = '?' + encodeURIComponent('serviceKey') + '9mTk0/xkXqrLmNNHjWBa/1miAzFFB9rxSS7KKuTq3FtOvlxeXCNHt6ix0GJvj/oEUnQdzxqBr0fuGEHQ1uARSQ=='+''; /*Service Key*/
             queryParams += '&' + encodeURIComponent('vehId') + '=' + encodeURIComponent('108045036'); /**/
             xhr.open('GET', url + queryParams);
             xhr.onreadystatechange = function () {
@@ -46,7 +39,7 @@
                 }
             };
 
-xhr.send('');
-        </script-->
+            xhr.send('');
+        </script>
     </body>
 </html>
