@@ -6,6 +6,7 @@ npm install discord.js
 npm install cors
 npm install request
 npm install express
+npm install xml-js
 ```
 
 공공 포털 서울 버스 차량 번호를 가지고 조회하여 

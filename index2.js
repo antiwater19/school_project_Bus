@@ -1,16 +1,30 @@
-//import cors from('cors'); //const cors = require("cors")
-//app.use(cors());
-                /*fetch('http://ws.bus.go.kr/api/rest/buspos/getBusPosByRtid?ServiceKey=9mTk0/xkXqrLmNNHjWBa/1miAzFFB9rxSS7KKuTq3FtOvlxeXCNHt6ix0GJvj/oEUnQdzxqBr0fuGEHQ1uARSQ==&busRouteId='+ 111033115) 
-                .then((response) => response.json())
-                .then((data) => {
-                    document.getElementById("headerMsg").innerHTML = data['headerMsg'];
-                });*/
+const { Client, IntentsBitField, AttachmentBuilder, Collection } = require('discord.js');
+const Conco = require('./Config.json');
 
+const client = new Client({
+    intents: [
+      IntentsBitField.Flags.Guilds,
+      IntentsBitField.Flags.GuildMembers,
+      IntentsBitField.Flags.GuildMessages,
+      IntentsBitField.Flags.MessageContent,
+    ],
+});
 
+client.on('ready', (c) => {
+    console.log(`Logged in as ${c.user.tag}!`);
+});
+    
+client.on('messageCreate', (message) =>{
+    console.log(message.content);
+} )
+
+client.login(Conco.token);
+
+/*
 var xhr = new XMLHttpRequest();
-var url = 'http://ws.bus.go.kr/api/rest/buspos/getBusPosByVehId'; /*URL*/
-var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'서비스키'; /*Service Key*/
-queryParams += '&' + encodeURIComponent('vehId') + '=108045325' + encodeURIComponent('111033115'); /**/
+var url = 'http://ws.bus.go.kr/api/rest/buspos/getBusPosByVehId'; //URL
+var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'서비스키'; //Service Key
+queryParams += '&' + encodeURIComponent('vehId') + '=108045325' + encodeURIComponent('111033115'); 
 xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
@@ -18,4 +32,4 @@ xhr.onreadystatechange = function () {
     }
 };
 
-xhr.send('');
+xhr.send('');*/

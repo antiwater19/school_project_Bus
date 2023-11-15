@@ -1,0 +1,69 @@
+{
+    "_declaration": {
+       "_attributes": {
+          "version": "1.0",
+          "encoding": "UTF-8",
+          "standalone": "yes"
+       }
+    },
+    "ServiceResult": {
+       "comMsgHeader": {},
+       "msgHeader": {
+          "headerCd": {
+             "_text": "0"
+          },
+          "headerMsg": {
+             "_text": "정상적으로 처리되었습니다."
+          },
+          "itemCount": {
+             "_text": "0"
+          }
+       },
+       "msgBody": {
+          "itemList": {
+             "busType": {
+                "_text": "1"
+             },
+             "congetion": {
+                "_text": "0"
+             },
+             "dataTm": {
+                "_text": "20231115223918"
+             },
+             "isFullFlag": {
+                "_text": "0"
+             },
+             "lastStnId": {
+                "_text": "108000383"
+             },
+             "plainNo": {
+                "_text": "서울74사6832"
+             },
+             "posX": {
+                "_text": "200993.64030961506"
+             },
+             "posY": {
+                "_text": "462589.7851894847"
+             },
+             "stId": {
+                "_text": "108000383"
+             },
+             "stOrd": {
+                "_text": "64"
+             },
+             "stopFlag": {
+                "_text": "0"
+             },
+             "tmX": {
+                "_text": "127.011263"
+             },
+             "tmY": {
+                "_text": "37.662914"
+             },
+             "vehId": {
+                "_text": "108045036"
+             }
+          }
+       }
+    }
+ }
