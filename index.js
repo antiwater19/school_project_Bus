@@ -63,7 +63,8 @@ client.on('messageCreate', (message) =>{
       const resultObject = JSON.parse(result);
       console.log(resultObject.ServiceResult.msgHeader.headerMsg._text);
       message.reply(`결과메시지 ${resultObject.ServiceResult.msgHeader.headerMsg._text} 
-      \n 저상버스(1이면 yes 0이면 no): ${resultObject.ServiceResult.msgBody.itemList.busType._text}`);
+      \n 저상버스(1이면 yes 0이면 no): ${resultObject.ServiceResult.msgBody.itemList.busType._text}
+      \n `);
     });
     
     
