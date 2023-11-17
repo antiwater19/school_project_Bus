@@ -63,8 +63,16 @@ client.on('messageCreate', (message) =>{
       const resultObject = JSON.parse(result);
       console.log(resultObject.ServiceResult.msgHeader.headerMsg._text);
       message.reply(`결과메시지 ${resultObject.ServiceResult.msgHeader.headerMsg._text} 
-      \n 저상버스(1이면 yes 0이면 no): ${resultObject.ServiceResult.msgBody.itemList.busType._text}
-      \n `);
+       저상버스(1이면 저상버스 0이면 no): ${resultObject.ServiceResult.msgBody.itemList.busType._text}
+       버스ID: ${resultObject.ServiceResult.msgBody.itemList.vehId._text}
+       정류소고유ID: ${resultObject.ServiceResult.msgBody.itemList.stId._text}
+       최종정류소고유ID: ${resultObject.ServiceResult.msgBody.itemList.lastStnId._text}
+       버스차량번호: ${resultObject.ServiceResult.msgBody.itemList.plainNo._text}
+       맵매칭GRS80 버스위치x좌표: ${resultObject.ServiceResult.msgBody.itemList.posX._text}
+       맵매칭GRS80 버스위치y좌표: ${resultObject.ServiceResult.msgBody.itemList.posY._text}
+       정류소도착여부: ${resultObject.ServiceResult.msgBody.itemList.stopFlag._text}
+       맵배칭WGS84 버스위치x좌표: ${resultObject.ServiceResult.msgBody.itemList.tmX._text}
+       맵배칭WGS84 버스위치y좌표: ${resultObject.ServiceResult.msgBody.itemList.tmY._text}`);
     });
     
     

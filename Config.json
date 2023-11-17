@@ -1,5 +1,6 @@
 { 
   "prefix": "!", 
-  "token": "토큰넣는곳" ,
-  "GUILD": "채팅채널ID넣는곳"
+  "token": "봇토큰" ,
+  "GUILD": "채팅채널ID",
+  "CLIENT": "봇클라이언트 ID"
 }
