@@ -1,6 +1,7 @@
 { 
   "prefix": "!", 
-  "token": "봇토큰" ,
-  "GUILD": "채팅채널ID",
-  "CLIENT": "봇클라이언트 ID"
+  "token": "discord token" ,
+  "GUILD_ID": "채팅채널ID",
+  "CLIENT_ID": "클라이언트아이디",
+  "APPLICATION_ID": "클라이언트아이디랑 똑같음"
 }
