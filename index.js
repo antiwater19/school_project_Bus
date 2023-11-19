@@ -5,7 +5,7 @@ app.use(cors()); //충돌나고 있었음
 const Conco = require('./Config.json');
 const Maping = require('./BusLocal.json');
 
-const { Client, IntentsBitField, AttachmentBuilder, Collection } = require('discord.js');
+const { Client, IntentsBitField, AttachmentBuilder, Collection, Events, ModalBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle, ModalSubmitInteraction, ModalSubmitFields  } = require('discord.js');
 const client = new Client({
   intents: [
     IntentsBitField.Flags.Guilds,
@@ -20,6 +20,7 @@ client.on('ready', (c) => {
   console.log(`Logged in as ${c.user.tag}!`);
 });
 
+
 client.on('interactionCreate', async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
@@ -28,6 +29,35 @@ client.on('interactionCreate', async interaction => {
     interaction.reply('hey!');
   } else if(interaction.commandName === 'ping'){
     interaction.reply('Pong!');
+  } else if(interaction.commandName === 'hello'){
+    //텍스트 입력 구성 요소 만들기
+    const modal=new ModalBuilder()
+    .setCustomId('bus VehId')
+    .setTitle('내버스 위치찾기');
+
+    const ChasingBus = new TextInputBuilder()
+    .setMaxLength(1000)
+    .setCustomId('Bus vehId')
+    //레이블은 이 입력에 대해 사용자에게 표시되는 프롬프트입니다.
+    .setLabel("What's your Bus vehId")
+    .setPlaceholder('차량 VehId를 입력해줘~')
+    //짧다는 것은 한 줄의 텍스트만 의미합니다.
+    .setRequired(true)
+    .setStyle(TextInputStyle.Short);
+    
+
+    const firstActionRow = new ActionRowBuilder().addComponents(ChasingBus);
+    modal.addComponents(firstActionRow);
+    await interaction.showModal(modal);
+
+
+    client.on(Events.InteractionCreate, interaction => {
+      if (!interaction.isModalSubmit()) return;
+    
+      // Get the data entered by the user
+      const busVehId = interaction.fields.getTextInputValue('Bus vehId');
+      console.log(busVehId);
+    });
   }
 });
 

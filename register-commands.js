@@ -12,8 +12,8 @@ const commands = [
         description: 'Pong!',
     },
     {
-        name: 'hello',
-        description: 'Hello World! Discord.js',
+        name: 'hello',//명령어
+        description: 'chasing the bus',//위 명령어의 설명
     },
 ];
 
