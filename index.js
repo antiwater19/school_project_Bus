@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-app.use(cors()); //충돌나고 있었음
+app.use(cors()); 
 const Conco = require('./Config.json');
 const Maping = require('./BusLocal.json');
 
@@ -61,7 +61,7 @@ client.on('interactionCreate', async interaction => {
         // Get the data entered by the user
         const busVehId = interaction.fields.getTextInputValue('Bus vehId');
         VEHID = busVehId;
-        console.log(VEHID);
+        console.log(VEHID); //전역변수인 VEHID에 차량 ID를 입력받는다.
 
         interaction.reply('정상적으로 실행되었습니다. 등록하신차량 번호는'+ VEHID +"입니다.");
       });
@@ -128,8 +128,6 @@ client.on('messageCreate', (message) =>{
           message.reply('유효하지 않는 버스 번호를 입력하셨습니다. 다시 /bus 커맨드를 사용해서 버스번호를 입력해주세요');
         }
 
-        // Maping이 BusLocal.json파일을 가리킨다.
-        //console.log(`요거 데이터: ${Maping.DATA[1].stop_nm}`);
       });
     } catch{
       message.reply('버스의 위치데이터가 없어요 ㅠㅠ 조금있다가 다시 시도하거나. /bus를 이용해서 다시 차량ID를 입력해주세요ㅠㅠ');
