@@ -8,11 +8,11 @@ const commands = [
         description: 'Replies with hey!',
     },
     {
-        name: 'ping',
-        description: 'Pong!',
+        name: 'location',
+        description: 'this is your bus location',
     },
     {
-        name: 'hello',//명령어
+        name: 'bus',//명령어
         description: 'chasing the bus',//위 명령어의 설명
     },
 ];

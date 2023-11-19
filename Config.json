@@ -2,6 +2,6 @@
   "prefix": "!", 
   "token": "토큰" ,
   "GUILD_ID": "채팅채널아이디",
-  "CLIENT_ID": "클라아이디",
-  "APPLICATION_ID": "클라아이디"
+  "CLIENT_ID": "봇클라이언트 아이디",
+  "APPLICATION_ID": "봇 클라이언트 아이디"
 }
