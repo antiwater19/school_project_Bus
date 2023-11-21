@@ -12,3 +12,9 @@ npm install xml-js
 공공 포털 서울 버스 차량 번호를 가지고 조회하여 
 discord bot을 통해 그 차량의 위치 좌표 데이터 번호표등을
 xml파일 로 받는다.
+
+처음 파일 다운로드 후  node.js설치후 
+vscode에서 
+```node register-commands.js```
+```node index.js```
+로 실행하면 된다.
